@@ -69,7 +69,10 @@ void() Laser_Touch =
 	sound (self, CHAN_WEAPON, "enforcer/enfstop.wav", 1, ATTN_STATIC);
 	if (other.takedamage)
 	{
-		SpawnBlood (org, self.velocity*0.2, 20);
+		// [Dawn]
+		if ((other.flags & FL_MONSTER) || other.classname == "player")
+			SpawnBlood (org, self.velocity*0.2, 20);
+
 		T_Damage (other, self, self.owner, 20, 45, FALSE);
 	}
 	else

@@ -204,7 +204,11 @@ void() T_GruntPelletTouch =
 	{
 		local float damage = 3;
 		local vector vel = normalize(self.velocity);
-		SpawnBlood(self.origin - vel*4, vel*40, damage);
+
+		// [Dawn]
+		if ((other.flags & FL_MONSTER) || other.classname == "player")
+			SpawnBlood(self.origin - vel*4, vel*40, damage);
+
 		T_Damage(other, self, self.owner, damage, 5.6, FALSE);
 	}
 	else

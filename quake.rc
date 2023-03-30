@@ -6,10 +6,7 @@ exec default.cfg
 // load the last saved configuration
 exec config.cfg
 
-// run a user script file if present
-exec autoexec.cfg
-
-// bump up the audio quality
+// bump up the audio quality - we got high quality sound assets :D
 sndspeed "44100"
 
 // reduce annoying underwater tint amount
@@ -17,6 +14,9 @@ gl_cshiftpercent "50"
 
 // enable Quake's weapon shifting
 r_viewmodel_quake "1"
+
+// run a user script file if present
+exec autoexec.cfg
 
 //scr_printspeed 16
 
@@ -40,7 +40,12 @@ r_viewmodel_quake "1"
 // stuff command line statements
 stuffcmds
 
-// start demos if not already running a server
-startdemos demo1 demo2 demo3
+// Required for large maps (map grid > 4096)
+// Required for smooth rotation of cinematic camera's
+sv_protocol 999
 
-//map start
+// open the main menu right away when Dawn is loaded
+//menu_main
+
+// start demos if not already running a server
+//startdemos demo1 demo2 demo3

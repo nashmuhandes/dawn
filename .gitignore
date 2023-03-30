@@ -4,3 +4,6 @@
 *.log
 *.pts
 /ironwail.cfg
+*.prt
+/src_maps/autosave
+/maps

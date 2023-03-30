@@ -370,16 +370,18 @@ void(vector src, vector dir) PelletAttack =
 {
 	local entity missile = spawn();
 	missile.owner = self;
-	missile.movetype = MOVETYPE_FLY;
+	missile.movetype = MOVETYPE_FLYMISSILE;
 	missile.solid = SOLID_BBOX;
 	missile.classname = "pellet";
 			
-	missile.velocity = dir * 2000;
-	missile.angles = vectoangles(missile.velocity);
-	
-	missile.nextthink = time + 2;
-	missile.think = SUB_Remove;
+	missile.velocity = dir * 0.01; // forces internal collision checking (needed if inside entity)
+	missile.fast_velocity = dir * 2000;
+	missile.angles = vectoangles(missile.fast_velocity);
+
+	missile.nextthink = time + 0.02; // Add a small initial delay to force a collision check at spawn
+	missile.think = FastProjectileThink;
 	missile.touch = T_PelletTouch;
+	missile.special = time + 2;
 
 	setmodel (missile, "progs/s_pellet.mdl");
 	setsize (missile, VEC_ORIGIN, VEC_ORIGIN);		
@@ -426,7 +428,7 @@ void() W_FireShotgun =
 
 	--self.ammo_shells;
 	self.currentammo = self.ammo_shells;
-	FirePellets(9, 5, GetAimDirection(self.origin+'0 0 15', 2048), '0.0559 0.0559 0');
+	FirePellets(9, 5, GetAimDirection(self.origin+'0 0 15', 2048), '0.0629 0.0629 0');
 	self.punchangle_x = -2;
 };
 
@@ -443,13 +445,13 @@ void() W_FireSuperShotgun =
 	if (self.ammo_shells == 1)
 	{
 		--self.ammo_shells;
-		FirePellets(9, 5, GetAimDirection(self.origin+'0 0 15', 2048), '0.0559 0.0559 0');
+		FirePellets(9, 5, GetAimDirection(self.origin+'0 0 15', 2048), '0.0629 0.0629 0');
 		self.punchangle_x = -2;
 	}
 	else
 	{
 		self.ammo_shells -= 2;
-		FirePellets(18, 10, GetAimDirection(self.origin+'0 0 15', 2048), '0.1122 0.1122 0');
+		FirePellets(18, 10, GetAimDirection(self.origin+'0 0 15', 2048), '0.1263 0.1263 0');
 		self.punchangle_x = -4;
 	}
 	

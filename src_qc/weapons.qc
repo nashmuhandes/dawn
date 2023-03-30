@@ -364,6 +364,8 @@ PelletAttack
 
 Alternative to TraceAttack that uses fast moving
 projectiles instead of a tracer.
+
+// [Nash] For Dawn, this got changed to a fast projectile (ONLY for player pellets; not monsters)
 ================
 */
 void(vector src, vector dir) PelletAttack =
@@ -375,7 +377,7 @@ void(vector src, vector dir) PelletAttack =
 	missile.classname = "pellet";
 			
 	missile.velocity = dir * 0.01; // forces internal collision checking (needed if inside entity)
-	missile.fast_velocity = dir * 2000;
+	missile.fast_velocity = dir * 8000;
 	missile.angles = vectoangles(missile.fast_velocity);
 
 	missile.nextthink = time + 0.02; // Add a small initial delay to force a collision check at spawn

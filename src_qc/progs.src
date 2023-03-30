@@ -33,3 +33,6 @@ fish.qc			// registered
 shalrath.qc		// registered
 enforcer.qc		// registered
 oldone.qc		// registered
+
+// Dawn stuff
+dawntest.qc

@@ -5,6 +5,7 @@
 "classname" "worldspawn"
 "wad" "D:/Games/Quake/tools/wads/nashskip/nashskip.wad;D:/Games/Quake/ironwail/dawn/src_wads/dawn_common.wad"
 "_tb_mod" "dawn"
+"_tb_def" "external:D:/Games/Quake/ironwail/dawn/src_maps/Dawn.fgd"
 // brush 0
 {
 ( -256 -64 -16 ) ( -256 -63 -16 ) ( -256 -64 -15 ) dawn_default 0 0 0 1 1
@@ -64,4 +65,10 @@
 {
 "classname" "info_player_start"
 "origin" "0 0 24"
+}
+// entity 2
+{
+"classname" "misc_dawntest"
+"origin" "136 -8 8"
+"angle" "180"
 }

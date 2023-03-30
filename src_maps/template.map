@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "_tb_mod" "dawn"
-"wad" "D:/Games/Quake/tools/wads/nashskip/nashskip.wad"
+"wad" "D:/Games/Quake/tools/wads/nashskip/nashskip.wad;D:/Games/Quake/ironwail/dawn/src_wads/dawn_common.wad"
 "_wateralpha" "0.95"
 "_bounce" "1"
 "_dirt" "1"
@@ -15,12 +15,12 @@
 "_sunlight" "140"
 // brush 0
 {
-( -512 48 0 ) ( -512 304 0 ) ( -512 48 16 ) skip 0 0 0 1 1
-( -368 -512 0 ) ( -464 -512 0 ) ( -368 -512 16 ) skip 0 0 0 1 1
-( -368 48 0 ) ( -368 304 0 ) ( -464 48 0 ) skip 0 0 0 1 1
-( -464 48 16 ) ( -464 304 16 ) ( -368 48 16 ) skip 0 0 0 1 1
-( -464 512 0 ) ( -368 512 0 ) ( -464 512 16 ) skip 0 0 0 1 1
-( 512 48 16 ) ( 512 304 16 ) ( 512 48 0 ) skip 0 0 0 1 1
+( -512 48 0 ) ( -512 304 0 ) ( -512 48 16 ) dawn_default 0 0 0 1 1
+( -368 -512 0 ) ( -464 -512 0 ) ( -368 -512 16 ) dawn_default 0 0 0 1 1
+( -368 48 0 ) ( -368 304 0 ) ( -464 48 0 ) dawn_default 0 0 0 1 1
+( -464 48 16 ) ( -464 304 16 ) ( -368 48 16 ) dawn_default 0 0 0 1 1
+( -464 512 0 ) ( -368 512 0 ) ( -464 512 16 ) dawn_default 0 0 0 1 1
+( 512 48 16 ) ( 512 304 16 ) ( 512 48 0 ) dawn_default 0 0 0 1 1
 }
 }
 // entity 1

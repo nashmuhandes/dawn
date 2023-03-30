@@ -1,0 +1,31 @@
+// Game: Quake
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_mod" "dawn"
+"wad" "D:/Games/Quake/tools/wads/nashskip/nashskip.wad"
+"_wateralpha" "0.95"
+"_bounce" "1"
+"_dirt" "1"
+"_bouncestyled" "1"
+"_bouncescale" "1"
+"_bouncecolorscale" "1"
+"_sun_mangle" "32 -55 0"
+"_sunlight" "140"
+// brush 0
+{
+( -512 48 0 ) ( -512 304 0 ) ( -512 48 16 ) skip 0 0 0 1 1
+( -368 -512 0 ) ( -464 -512 0 ) ( -368 -512 16 ) skip 0 0 0 1 1
+( -368 48 0 ) ( -368 304 0 ) ( -464 48 0 ) skip 0 0 0 1 1
+( -464 48 16 ) ( -464 304 16 ) ( -368 48 16 ) skip 0 0 0 1 1
+( -464 512 0 ) ( -368 512 0 ) ( -464 512 16 ) skip 0 0 0 1 1
+( 512 48 16 ) ( 512 304 16 ) ( 512 48 0 ) skip 0 0 0 1 1
+}
+}
+// entity 1
+{
+"classname" "info_player_start"
+"origin" "0 0 40"
+"angle" "0"
+}

@@ -26,7 +26,7 @@ REM *******************************************************
 if exist %pakname%.pak del %pakname%.pak
 
 REM Make the PAK0
-qpakman gfx maps progs sound gfx.wad progs.dat quake.rc -o .\%pakname%.pak
+qpakman gfx maps progs sound gfx.wad csprogs.dat progs.dat quake.rc -o .\%pakname%.pak
 
 
 
@@ -56,6 +56,7 @@ if exist Dawn_README.txt copy Dawn_README.txt dawn\Dawn_README.txt
 
 REM copy sources
 if exist ./src_qc xcopy src_qc dawn\src\qc /I /EXCLUDE:xsrc.txt
+if exist ./src_csqc xcopy src_csqc dawn\src\csqc /I /EXCLUDE:xsrc.txt
 if exist ./src_maps xcopy src_maps dawn\src\maps /I /EXCLUDE:xsrc.txt
 if exist ./src_wads xcopy src_wads dawn\src\wads /I /EXCLUDE:xsrc.txt
 

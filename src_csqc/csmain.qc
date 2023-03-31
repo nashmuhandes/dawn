@@ -129,7 +129,7 @@ void(vector virtsize, float showscores) CSQC_DrawHud =
 {
 	string face;
 	face = "gfx/face_100.lmp";
-	drawpic((0, 200), face, HUDSIZE_24, HUDRGB_DEF, 1.0, 0);
+	//drawpic((0, 200), face, HUDSIZE_24, HUDRGB_DEF, 1.0, 0);
 };
 
 //----------------------------------------------------------------------

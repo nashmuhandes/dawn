@@ -26,7 +26,7 @@ REM *******************************************************
 if exist %pakname%.pak del %pakname%.pak
 
 REM Make the PAK0
-qpakman gfx maps progs sound gfx.wad csprogs.dat progs.dat quake.rc -o .\%pakname%.pak
+qpakman gfx maps progs sound textures gfx.wad csprogs.dat progs.dat quake.rc -o .\%pakname%.pak
 
 
 

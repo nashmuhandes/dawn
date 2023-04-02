@@ -42,7 +42,7 @@ void(vector viewsize, float scoresshown) CSQC_DrawHud =
 	picSize = '24 24 0';
 	drawPadding = 8;
 	drawPos = [drawPadding, viewsize_y - picSize_y - drawPadding];
-	drawpic(drawPos, "gfx/face_100.lmp", picSize);
+	drawpic(drawPos, "gfx/face_100.lmp", picSize, '1 1 1', GetSBarAlpha());
 
 	// draw health
 	drawPos = drawPos + [picSize_x + drawPadding];

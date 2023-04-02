@@ -6,6 +6,7 @@
 //
 //===========================================================================
 
+float() GetSBarAlpha;
 void(vector pos, float value, float threshhold, string justify) DrawNumber;
 
 //===========================================================================
@@ -48,6 +49,11 @@ string BigNumberPics[10] =
 	"gfx/anum_9"
 };
 
+float() GetSBarAlpha =
+{
+	return autocvar(scr_sbaralpha, 1.0);
+}
+
 //===========================================================================
 //
 // DrawNumber
@@ -78,7 +84,7 @@ void(vector pos, float value, float threshhold, string justify) DrawNumber =
 		{
 			len--;
 			c = str2chr(s, len);
-			drawpic(pos + [len * 24, 0], BigNumberPics[c - '0'], '24 24 0', '1 1 1', 1, 0);
+			drawpic(pos + [len * 24, 0], BigNumberPics[c - '0'], '24 24 0', '1 1 1', GetSBarAlpha(), 0);
 		}
 	}
 	else
@@ -88,7 +94,7 @@ void(vector pos, float value, float threshhold, string justify) DrawNumber =
 		{
 			len--;
 			c = str2chr(s, len);
-			drawpic(pos + [len * 24, 0], SmallNumberPics[c - '0'], '24 24 0', '1 1 1', 1, 0);
+			drawpic(pos + [len * 24, 0], SmallNumberPics[c - '0'], '24 24 0', '1 1 1',  GetSBarAlpha(), 0);
 		}
 	}
 };

@@ -262,6 +262,9 @@ void() misc_explobox =
 	self.th_die = barrel_explode;
 	self.takedamage = DAMAGE_AIM;
 
+	// 1998-09-16 Sliding/not-jumping on monsters/boxes/players fix by Maddes/Kryten [Dawn]
+	self.touch = monster_touch;
+
 	self.origin_z = self.origin_z + 2;
 	oldz = self.origin_z;
 	droptofloor();
@@ -293,6 +296,9 @@ void() misc_explobox2 =
 	self.health = 20;
 	self.th_die = barrel_explode;
 	self.takedamage = DAMAGE_AIM;
+
+	// 1998-09-16 Sliding/not-jumping on monsters/boxes/players fix by Maddes/Kryten [Dawn]
+	self.touch = monster_touch;
 
 	self.origin_z = self.origin_z + 2;
 	oldz = self.origin_z;

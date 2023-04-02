@@ -8,6 +8,8 @@
 
 float() GetSBarAlpha;
 void(vector pos, float value, float threshhold, string justify) DrawNumber;
+void(vector viewsize) DrawHUD;
+void(vector viewsize) DrawScores;
 
 //===========================================================================
 //

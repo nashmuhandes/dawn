@@ -28,6 +28,20 @@ void(float apilevel, string enginename, float engineversion) CSQC_Init =
 
 void(vector viewsize, float scoresshown) CSQC_DrawHud =
 {
+	if (!scoresshown)
+		DrawHUD(viewsize);
+	else
+		DrawScores(viewsize);
+};
+
+//===========================================================================
+//
+// DrawHUD
+//
+//===========================================================================
+
+void(vector viewsize) DrawHUD =
+{
 	// note that we could use getstati to read the items stat, but it'd degrade when then cast to a float, and QSS + DP don't support ints, so we have to use two floats.
 	citems 	= getstatbits(STAT_ITEMS, 0, 23);
 	citems2 = getstatbits(STAT_ITEMS, 23, 9);
@@ -47,4 +61,14 @@ void(vector viewsize, float scoresshown) CSQC_DrawHud =
 	// draw health
 	drawPos = drawPos + [picSize_x + drawPadding];
 	DrawNumber(drawPos, chealth, 0, "left");
-};
+}
+
+//===========================================================================
+//
+// DrawScores
+//
+//===========================================================================
+
+void(vector viewsize) DrawScores =
+{
+}

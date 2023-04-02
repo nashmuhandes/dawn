@@ -4,7 +4,7 @@
 // https://spawnhost.wordpress.com/articles/csqc-pt-1-common-functions/
 // https://spawnhost.wordpress.com/articles/csqc-pt-2-networking/
 
-csqc_defsclient.qc
-csqc_defs.qc
+fteextensions.qc
 
-csmain.qc
+hud_defs.qc
+hud.qc

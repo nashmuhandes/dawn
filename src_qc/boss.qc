@@ -322,6 +322,9 @@ void() monster_boss =
 
 	total_monsters = total_monsters + 1;
 
+	// 1998-09-16 Sliding/not-jumping on monsters/boxes/players fix by Maddes/Kryten [Dawn]
+	self.touch = monster_touch;
+
 	self.use = boss_awake;
 };
 

@@ -109,7 +109,7 @@ void()	tbaby_jump1;
 
 void()	Tar_JumpTouch =
 {
-	self.touch = SUB_Null;
+	//self.touch = SUB_Null;
 	
 	if (self.health <= 0)
 		return;
@@ -124,6 +124,23 @@ void()	Tar_JumpTouch =
 	}
 	else
 		sound (self, CHAN_WEAPON, "blob/land1.wav", 1, ATTN_NORM);
+
+	if (!checkbottom(self))
+	{
+		if (self.flags & FL_ONGROUND)
+		{
+
+			// 1998-09-16 Sliding/not-jumping on monsters/boxes/players fix by Maddes/Kryten [Dawn]
+			self.touch = monster_touch;
+			self.think = tbaby_run1;
+			self.movetype = MOVETYPE_STEP;
+			self.nextthink = time + 0.1;
+		}
+		return;
+	}
+
+	// 1998-09-16 Sliding/not-jumping on monsters/boxes/players fix by Maddes/Kryten [Dawn]
+	self.touch = monster_touch;
 
 	self.think = tbaby_run1;
 };

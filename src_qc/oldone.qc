@@ -293,6 +293,10 @@ void() monster_oldone =
 	self.th_pain = oldone_pain;
 	self.th_die = finale_1;
 	self.pain_threshold = 1;
+
+	// 1998-09-16 Sliding/not-jumping on monsters/boxes/players fix by Maddes/Kryten [Dawn]
+	self.touch = monster_touch;
+
 	shub = self;
 
 	total_monsters = total_monsters + 1;

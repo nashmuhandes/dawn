@@ -324,7 +324,7 @@ void()	Demon_JumpTouch =
 	if (!other.takedamage && !(self.flags & FL_ONGROUND))
 		return;
 		
-	self.touch = SUB_Null;
+	//self.touch = SUB_Null;
 	
 	if (self.health <= 0)
 		return;
@@ -335,6 +335,21 @@ void()	Demon_JumpTouch =
 			T_Damage (other, self, self, 50, 150, FALSE);
 	}
 	
+	// 1998-09-16 Sliding/not-jumping on monsters/boxes/players fix by Maddes/Kryten [Dawn]
+	if (!checkbottom(self))
+	{
+		if (self.flags & FL_ONGROUND)
+		{
+			self.touch = monster_touch;
+			self.think = demon1_jump1;
+			self.nextthink = time + 0.1;
+		}
+		return;
+	}
+
+	// 1998-09-16 Sliding/not-jumping on monsters/boxes/players fix by Maddes/Kryten [Dawn]
+	self.touch = monster_touch;
+
 	self.think = demon1_jump11;
 	self.nextthink = time + 0.1;
 };

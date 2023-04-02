@@ -74,7 +74,7 @@ void()	Dog_JumpTouch =
 	if (!other.takedamage && !(self.flags & FL_ONGROUND))
 		return;
 		
-	self.touch = SUB_Null;
+	//self.touch = SUB_Null;
 	
 	if (self.health <= 0)
 		return;
@@ -84,6 +84,21 @@ void()	Dog_JumpTouch =
 		if (vlen(self.velocity) >= 144)
 			T_Damage (other, self, self, 20, 50, FALSE);	
 	}
+
+	// 1998-09-16 Sliding/not-jumping on monsters/boxes/players fix by Maddes/Kryten [Dawn]
+	if (!checkbottom(self))
+	{
+		if (self.flags & FL_ONGROUND)
+		{
+			self.touch = monster_touch;
+			self.think = dog_leap1;
+			self.nextthink = time + 0.1;
+		}
+		return;
+	}
+
+	// 1998-09-16 Sliding/not-jumping on monsters/boxes/players fix by Maddes/Kryten [Dawn]
+	self.touch = monster_touch;
 
 	self.special_time = time + 1;
 	self.think = dog_run1;

@@ -375,7 +375,7 @@ PelletAttack
 Alternative to TraceAttack that uses fast moving
 projectiles instead of a tracer.
 
-// [Nash] For Dawn, this got changed to a fast projectile (ONLY for player pellets; not monsters)
+// [Dawn] This got changed to a fast projectile (ONLY for player pellets; not monsters)
 ================
 */
 void(vector src, vector dir) PelletAttack =

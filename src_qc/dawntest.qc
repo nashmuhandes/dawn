@@ -42,6 +42,9 @@ void() misc_dawntest =
 	self.nextthink = time + 0.1;
 	//misc_dawntestthink();
 
+	// [Dawn] prevents player sliding when standing on top of it
+	self.touch = monster_touch;
+
 	// Once you make an entity static the model gets "baked" into the world and the edict is discarded, so you can't control it anymore
 	//makestatic(self);
 };

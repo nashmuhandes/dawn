@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "_tb_mod" "dawn"
-"wad" "D:/Games/Quake/tools/wads/nashskip/nashskip.wad;D:/Games/Quake/ironwail/dawn/src_wads/dawn_common.wad"
+"wad" "D:/Games/Quake/ironwail/dawn/src_wads/dawn_common.wad"
 "_wateralpha" "0.95"
 "_bounce" "1"
 "_dirt" "1"

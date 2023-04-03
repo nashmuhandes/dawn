@@ -3,7 +3,7 @@
 // entity 0
 {
 "classname" "worldspawn"
-"wad" "D:/Games/Quake/tools/wads/nashskip/nashskip.wad;D:/Games/Quake/ironwail/dawn/src_wads/dawn_common.wad"
+"wad" "D:/Games/Quake/ironwail/dawn/src_wads/dawn_common.wad"
 "_tb_mod" "dawn"
 "_tb_def" "external:D:/Games/Quake/ironwail/dawn/src_maps/Dawn.fgd"
 // brush 0

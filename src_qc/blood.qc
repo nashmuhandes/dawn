@@ -27,6 +27,7 @@ void(entity e, vector org) SpawnBloodSplat =
 
 	setmodel(blud, "progs/blud.spr");
 	setsize(blud, '-2 -2 0', '2 2 4');
+	blud.scale = 0.666;
 
 	setorigin(blud, org);
 	blud.velocity_z = (random() * 32);

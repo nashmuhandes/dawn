@@ -90,7 +90,7 @@ void() DrawDebug =
 {
 	drawfill('0 0 0', '1920 1080 0', '0 0 0', 0.8);
 
-	local string txt;
+	local string txt = "";
 
 	if (citems & IT_AXE)
 		txt = strcat(txt, "IT_AXE ");

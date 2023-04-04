@@ -788,4 +788,4 @@ float(entity targ, entity inflictor) CanDamage;
 
 
 // [Dawn]
-void(entity e, vector org) SpawnBloodSplat;
+void(entity e, vector org) BloodSplat;

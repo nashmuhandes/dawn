@@ -73,7 +73,7 @@ void() Laser_Touch =
 		if ((other.flags & FL_MONSTER) || other.classname == "player")
 		{
 			SpawnBlood (org, self.velocity*0.2, 20);
-			SpawnBloodSplat(other, org);
+			BloodSplat(other, org);
 		}
 
 		T_Damage (other, self, self.owner, 20, 45, FALSE);

@@ -29,7 +29,7 @@ void() misc_dawntestthink =
 	if (self.frame == 26)
 		self.frame = 1;
 	self.nextthink = time + 0.1;
-}
+};
 
 void() misc_dawntest =
 {

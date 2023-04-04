@@ -100,7 +100,7 @@ void() W_FireAxe =
 		if ((trace_ent.flags & FL_MONSTER) || trace_ent.classname == "player")
 		{
 			SpawnBlood (org, '0 0 0', 20);
-			SpawnBloodSplat(trace_ent, org);
+			BloodSplat(trace_ent, org);
 		}
 
 		local float damage = 54;
@@ -174,7 +174,11 @@ SpawnBlood
 */
 void(vector org, vector vel, float damage) SpawnBlood =
 {
-	particle (org, vel*0.1, 73, damage*2);
+	// [Dawn]
+	org_x += (16 * crandom());
+	org_y += (16 * crandom());
+	org_z += (4 * crandom());
+	particle (org, vel*0.1*crandom(), 73, damage*3);
 };
 
 /*
@@ -188,7 +192,7 @@ void(float damage) spawn_touchblood =
 
 	vel = wall_velocity () * 0.2;
 	SpawnBlood (self.origin + vel*0.01, vel, damage);
-	SpawnBloodSplat(self, self.origin + vel*0.01);
+	BloodSplat(self, self.origin + vel*0.01);
 };
 
 
@@ -272,7 +276,7 @@ void(float damage, vector dir) TraceAttack =
 		if ((trace_ent.flags & FL_MONSTER) || trace_ent.classname == "player")
 		{
 			SpawnBlood (org, vel*0.2, damage);
-			SpawnBloodSplat(trace_ent, org);
+			BloodSplat(trace_ent, org);
 		}
 
 		AddMultiDamage (trace_ent, damage);
@@ -341,7 +345,7 @@ void() T_PelletTouch =
 		if ((trace_ent.flags & FL_MONSTER) || trace_ent.classname == "player")
 		{
 			SpawnBlood(self.origin - vel*4, vel*40, damage);
-			SpawnBloodSplat(trace_ent, self.origin - vel*4);
+			BloodSplat(trace_ent, self.origin - vel*4);
 		}
 
 		if (other.is_zombie)

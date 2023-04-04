@@ -42,10 +42,13 @@ void() W_Precache =
 	precache_sound ("weapons/shotgn2.wav");	// super shotgun
 };
 
+/*
+// [Dawn] use the one from Copper's maths.qc instead (same thing, really)
 float() crandom =
 {
 	return 2*(random() - 0.5);
 };
+*/
 
 /*
 ================

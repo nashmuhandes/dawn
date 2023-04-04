@@ -1,6 +1,10 @@
 ../progs.dat
 
 defs.qc
+
+// [Dawn] taken from Copper
+maths.qc
+
 subs.qc
 fight.qc
 ai.qc

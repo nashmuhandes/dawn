@@ -193,10 +193,19 @@ void() worldspawn =
 	InitBodyQue ();
 
 	// custom map attributes
-	if (self.model == "maps/e1m8.bsp")
-		cvar_set ("sv_gravity", "100");
-	else
-		cvar_set ("sv_gravity", "800");
+	// [Dawn] custom gravity (from Copper)
+	if (!self.gravity)
+	{
+		if (self.model == "maps/e1m8.bsp")
+		{
+			self.gravity = 100;
+		}
+		else
+		{
+			self.gravity = 800;
+		}
+	}
+	cvar_set("sv_gravity", ftos(self.gravity));
 
 	// the area based ambient sounds MUST be the first precache_sounds
 

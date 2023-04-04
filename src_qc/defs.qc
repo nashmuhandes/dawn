@@ -442,6 +442,7 @@ float		skill;
 .string		wad;
 .string 	map;
 .float		worldtype;	// 0=medieval 1=metal 2=base
+.float		gravity;	// [Dawn]
 
 //================================================
 

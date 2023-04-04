@@ -5,9 +5,11 @@
 //
 //===========================================================================
 
-void() s_blood1 = [0, s_blood2] { self.nextthink = time + 0.2 + (random() * 0.1); };
-void() s_blood2 = [1, s_blood3] { self.nextthink = time + 0.1 + (random() * 0.1); };
-void() s_blood3 = [2, s_blood4] { self.nextthink = time + 0.1 + (random() * 0.1); };
+$frame bloodsplat1 bloodsplat2 bloodsplat3
+
+void() s_blood1 = [$bloodsplat1, s_blood2] { self.nextthink = time + 0.2 + (random() * 0.1); };
+void() s_blood2 = [$bloodsplat2, s_blood3] { self.nextthink = time + 0.1 + (random() * 0.1); };
+void() s_blood3 = [$bloodsplat3, s_blood4] { self.nextthink = time + 0.1 + (random() * 0.1); };
 void() s_blood4 = { SUB_Remove(); };
 
 //===========================================================================

@@ -68,7 +68,25 @@
 }
 // entity 2
 {
-"classname" "misc_dawntest"
-"origin" "136 -8 8"
-"angle" "180"
+"classname" "info_notnull"
+"origin" "-8 -8 8"
+"ammo_shells" "-25"
+"think" "InitTrigger"
+"touch" "BackpackTouch"
+"nextthink" ".2"
+}
+// entity 3
+{
+"classname" "item_armor1"
+"origin" "128 0 0"
+}
+// entity 4
+{
+"classname" "item_armor2"
+"origin" "128 -80 0"
+}
+// entity 5
+{
+"classname" "item_armorInv"
+"origin" "80 -144 0"
 }

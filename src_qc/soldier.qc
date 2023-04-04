@@ -207,7 +207,10 @@ void() T_GruntPelletTouch =
 
 		// [Dawn]
 		if ((other.flags & FL_MONSTER) || other.classname == "player")
+		{
 			SpawnBlood(self.origin - vel*4, vel*40, damage);
+			SpawnBloodSplat(other, self.origin - vel*4);
+		}
 
 		T_Damage(other, self, self.owner, damage, 5.6, FALSE);
 	}

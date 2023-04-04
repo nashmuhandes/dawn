@@ -42,6 +42,10 @@ void() misc_dawntest =
 	self.nextthink = time + 0.1;
 	//misc_dawntestthink();
 
+	// make this entity bleed (for testing purposes)
+	//self.flags |= FL_MONSTER;
+	//self.takedamage = DAMAGE_YES;
+
 	// [Dawn] prevents player sliding when standing on top of it
 	self.touch = monster_touch;
 

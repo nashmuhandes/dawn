@@ -58,6 +58,7 @@ REM copy sources
 if exist ./src_qc xcopy src_qc dawn\src\qc /I /EXCLUDE:xsrc.txt
 if exist ./src_csqc xcopy src_csqc dawn\src\csqc /I /EXCLUDE:xsrc.txt
 if exist ./src_maps xcopy src_maps dawn\src\maps /I /EXCLUDE:xsrc.txt
+if exist ./src_sprites xcopy src_maps dawn\src\sprites /I /EXCLUDE:xsrc.txt
 if exist ./src_wads xcopy src_wads dawn\src\wads /I /EXCLUDE:xsrc.txt
 
 if exist ./docs xcopy docs dawn\src\docs /I /s

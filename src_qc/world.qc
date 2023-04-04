@@ -312,6 +312,9 @@ void() worldspawn =
 
 	precache_model ("progs/v_light.mdl");
 
+	// [Dawn]
+	precache_model ("progs/blud.spr");
+
 	// Setup light animation tables. 'a' is total darkness, 'z' is maxbright.
 
 	// 0 normal

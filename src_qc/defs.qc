@@ -784,3 +784,6 @@ float (entity e, float healamount, float ignore) T_Heal; // health function
 float(entity targ, entity inflictor) CanDamage;
 
 
+
+// [Dawn]
+void(entity e, vector org) SpawnBloodSplat;

@@ -35,4 +35,5 @@ enforcer.qc		// registered
 oldone.qc		// registered
 
 // Dawn stuff
+blood.qc
 dawntest.qc

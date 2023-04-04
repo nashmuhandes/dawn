@@ -95,7 +95,10 @@ void() W_FireAxe =
 
 		// [Dawn]
 		if ((trace_ent.flags & FL_MONSTER) || trace_ent.classname == "player")
+		{
 			SpawnBlood (org, '0 0 0', 20);
+			SpawnBloodSplat(trace_ent, org);
+		}
 
 		local float damage = 54;
 		if (trace_ent.is_zombie)
@@ -182,6 +185,7 @@ void(float damage) spawn_touchblood =
 
 	vel = wall_velocity () * 0.2;
 	SpawnBlood (self.origin + vel*0.01, vel, damage);
+	SpawnBloodSplat(self, self.origin + vel*0.01);
 };
 
 
@@ -263,7 +267,10 @@ void(float damage, vector dir) TraceAttack =
 	{
 		// [Dawn]
 		if ((trace_ent.flags & FL_MONSTER) || trace_ent.classname == "player")
+		{
 			SpawnBlood (org, vel*0.2, damage);
+			SpawnBloodSplat(trace_ent, org);
+		}
 
 		AddMultiDamage (trace_ent, damage);
 	}
@@ -329,7 +336,10 @@ void() T_PelletTouch =
 
 		// [Dawn]
 		if ((trace_ent.flags & FL_MONSTER) || trace_ent.classname == "player")
+		{
 			SpawnBlood(self.origin - vel*4, vel*40, damage);
+			SpawnBloodSplat(trace_ent, self.origin - vel*4);
+		}
 
 		if (other.is_zombie)
 			damage *= 0.5;

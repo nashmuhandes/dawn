@@ -1,2 +1,46 @@
 ✔ Holding down jump should do a faster swim up @done(23-04-03 01:16)
 ☐ Create a shared constants file between both SSQC and CSQC
+
+Things I learned when making this mod
+
+Textures
+--------
+
+Model textures must have a single pixel on the top-left corner that will break a forced flood-fill algorithm with the engine.
+For example, placing a bright blue pixel (or any out-of-place color) and making sure no adjacent pixels have the same color.
+
+Level texture replacements (high colored, high res, whatever) go inside the "textures" folder. TGA format only.
+
+(Windows only) For external texture replacements, use # in place of * for liquid texture file names (example: *water1 becomes #water1.tga)
+
+Sprites
+-------
+
+Easiest way to make these is to import them with fimg (Animation -> Import and append frames)
+Don't forget to set Orientation to VP_Parallel in File -> Properties
+Use Origin Mode to set per-frame origins
+
+Sounds
+------
+
+Sound samples can only ever be in mono. 44.1 KHz 16 bit mono seems to work fine.
+
+Looping ambient sounds (wind, water, etc) must have at least 1 marker embedded in the WAV file. Ocenaudio (free) can do this.
+
+QuakeC
+------
+
+Weapon firing signal flow
+PlayerPostThink
+W_WeaponFrame
+(if input check was successful) W_Attack
+W_Fire*** OR various player animation frame functions inside player.qc
+
+W_Fire*** for single-tick weapon functions, or player states inside player.qc for "scripted" weapon animations
+(think of the latter as states in a GZDoom weapon (DECORATE/ZScript)
+
+CSQC
+----
+
+Use FTEQW to generate a quick-start CSQC header. Simple CSQC is much more convenient if all you're interested in is making a HUD
+(no need to reimplement everything from scratch). In FTEQW, type this into th console: pr_dumpplatform -Tcs -Tsimplecs -Tid1

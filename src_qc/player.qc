@@ -107,6 +107,9 @@ PLAYER
 
 void() player_run;
 
+// [Dawn]
+void() playfootstepsound;
+
 void()	player_stand1 =[	$axstnd1,	player_stand1	]
 {
 	self.weaponframe=0;
@@ -155,6 +158,9 @@ void()	player_run =[	$rockrun1,	player_run	]
 		self.frame = self.frame + self.walkframe;
 	}
 	self.walkframe = self.walkframe + 1;
+
+	if (self.walkframe % 3 == 0 && self.flags & FL_ONGROUND && self.waterlevel < 3 && self.movetype != MOVETYPE_NOCLIP)
+		playfootstepsound();
 };
 
 
@@ -775,3 +781,23 @@ void()	player_die_ax6	=	[	$axdeth6,	player_die_ax7	] {};
 void()	player_die_ax7	=	[	$axdeth7,	player_die_ax8	] {};
 void()	player_die_ax8	=	[	$axdeth8,	player_die_ax9	] {};
 void()	player_die_ax9	=	[	$axdeth9,	player_die_ax9	] {PlayerDead();};
+
+// [Dawn]
+void() playfootstepsound =
+{
+	local float vol = vlen(self.velocity);
+	vol = clamp(vol, 0, 1);
+
+	// [Dawn] choose from a different selection of samples to improve stereo imaging
+	local string sounds[] =
+	{
+		"footsteps/default01.wav",
+		"footsteps/default02.wav",
+		"footsteps/default03.wav",
+		"footsteps/default04.wav"
+	};
+
+	local float count = 4;
+
+	sound(self, CHAN_AUTO, sounds[rint(RandomRange(0, count - 1))], vol, ATTN_NORM);
+};

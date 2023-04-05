@@ -15,6 +15,9 @@ gl_cshiftpercent "50"
 // enable Quake's weapon shifting
 r_viewmodel_quake "1"
 
+// enable ironwail's smooth gunkick
+v_gunkick "2"
+
 scr_sbaralpha "1"
 
 // run a user script file if present

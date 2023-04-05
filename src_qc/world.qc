@@ -286,6 +286,12 @@ void() worldspawn =
 	precache_sound ("misc/water1.wav");			// swimming
 	precache_sound ("misc/water2.wav");			// swimming
 
+	// [Dawn] footstep sounds
+	precache_sound("footsteps/default01.wav");
+	precache_sound("footsteps/default02.wav");
+	precache_sound("footsteps/default03.wav");
+	precache_sound("footsteps/default04.wav");
+
 	precache_model ("progs/player.mdl");
 	precache_model ("progs/eyes.mdl");
 	precache_model ("progs/h_player.mdl");

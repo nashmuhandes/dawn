@@ -1235,7 +1235,8 @@ void() PlayerPostThink =
 	W_WeaponFrame ();
 
 	// check to see if player landed and play landing sound
-	if ((self.jump_flag < -300) && (self.flags & FL_ONGROUND) && (self.health > 0))
+	// [Dawn] made this trigger sooner
+	if ((self.jump_flag < -240) && (self.flags & FL_ONGROUND) && (self.health > 0))
 	{
 		if (self.watertype == CONTENT_WATER)
 			sound (self, CHAN_BODY, "player/h2ojump.wav", 1, ATTN_NORM);
@@ -1244,9 +1245,18 @@ void() PlayerPostThink =
 			T_Damage (self, world, world, 5, 0, TRUE);
 			sound (self, CHAN_VOICE, "player/land2.wav", 1, ATTN_NORM);
 			self.deathtype = "falling";
+
+			// [Dawn]
+			self.punchangle_z = 12 * crandom();
 		}
 		else
+		{
 			sound (self, CHAN_VOICE, "player/land.wav", 1, ATTN_NORM);
+
+			// [Dawn]
+			if (self.watertype == CONTENT_EMPTY)
+				self.punchangle_x = 3;
+		}
 
 		self.jump_flag = 0;
 	}

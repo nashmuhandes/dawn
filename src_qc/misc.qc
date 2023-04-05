@@ -125,9 +125,23 @@ void() light_globe =
 
 void() FireAmbient =
 {
-	precache_sound ("ambience/fire1.wav");
+	// [Dawn] choose from a different selection of samples to improve stereo imaging
+	local string sounds[] =
+	{
+		"ambience/fire1.wav",
+		"ambience/fire2.wav",
+		"ambience/fire3.wav"
+	};
+
+	local float count = 3;
+
+	for (float i = 0; i < count; i++)
+	{
+		precache_sound(sounds[i]);
+	}
+
 	// attenuate fast
-	ambientsound (self.origin, "ambience/fire1.wav", 0.5, ATTN_STATIC);
+	ambientsound (self.origin, sounds[rint(RandomRange(0, count - 1))], 0.5, ATTN_STATIC);
 };
 
 /*QUAKED light_torch_small_walltorch (0 .5 0) (-10 -10 -20) (10 10 20)

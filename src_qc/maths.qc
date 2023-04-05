@@ -331,3 +331,8 @@ float(float num) sqrt =
 
 
 
+
+inline float(float min, float max) RandomRange =
+{
+  return min + (max-min)*random();
+};

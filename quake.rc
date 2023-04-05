@@ -18,6 +18,9 @@ r_viewmodel_quake "1"
 // enable ironwail's smooth gunkick
 v_gunkick "2"
 
+// smoothly animated light styles
+r_lerplightstyles "1"
+
 scr_sbaralpha "1"
 
 // run a user script file if present

@@ -330,7 +330,9 @@ void() spiketrap_touch =
 	// hit something that bleeds
 	if (other.takedamage)
 	{
-		spawn_touchblood (10);
+		// [Dawn]
+		if (CanEntityBleed(other))
+			spawn_touchblood (10);
 		T_Damage (other, self, self.owner, 10, 45, FALSE);
 	}
 	else
@@ -356,7 +358,9 @@ void() superspiketrap_touch =
 	// hit something that bleeds
 	if (other.takedamage)
 	{
-		spawn_touchblood (20);
+		// [Dawn]
+		if (CanEntityBleed(other))
+			spawn_touchblood (20);
 		T_Damage (other, self, self.owner, 20, 45, FALSE);
 	}
 	else

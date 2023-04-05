@@ -360,3 +360,14 @@ void (void() thinkst) SUB_CheckRefire =
 	self.cnt = 1;
 	self.think = thinkst;
 };
+
+float (entity e) CanEntityBleed =
+{
+	if (e.classname == "player")
+		return TRUE;
+
+	if (e.flags & FL_MONSTER)
+		return TRUE;
+
+	return FALSE;
+};

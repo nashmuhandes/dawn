@@ -93,7 +93,9 @@ void() wiz_touch =
 	// hit something that bleeds
 	if (other.takedamage)
 	{
-		spawn_touchblood (15);
+		// [Dawn]
+		if (CanEntityBleed(other))
+			spawn_touchblood (15);
 		T_Damage (other, self, self.owner, 15, 25, FALSE);
 	}
 	else

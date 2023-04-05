@@ -97,7 +97,7 @@ void() W_FireAxe =
 		trace_ent.axhitme = 1;
 
 		// [Dawn]
-		if ((trace_ent.flags & FL_MONSTER) || trace_ent.classname == "player")
+		if (CanEntityBleed(trace_ent))
 		{
 			SpawnBlood (org, '0 0 0', 20);
 			BloodSplat(trace_ent, org);
@@ -273,7 +273,7 @@ void(float damage, vector dir) TraceAttack =
 	if (trace_ent.takedamage)
 	{
 		// [Dawn]
-		if ((trace_ent.flags & FL_MONSTER) || trace_ent.classname == "player")
+		if (CanEntityBleed(trace_ent))
 		{
 			SpawnBlood (org, vel*0.2, damage);
 			BloodSplat(trace_ent, org);
@@ -342,10 +342,10 @@ void() T_PelletTouch =
 		local vector vel = normalize(self.velocity);
 
 		// [Dawn]
-		if ((trace_ent.flags & FL_MONSTER) || trace_ent.classname == "player")
+		if (CanEntityBleed(other))
 		{
 			SpawnBlood(self.origin - vel*4, vel*40, damage);
-			BloodSplat(trace_ent, self.origin - vel*4);
+			BloodSplat(other, self.origin - vel*4);
 		}
 
 		if (other.is_zombie)
@@ -844,7 +844,9 @@ void() spike_touch =
 	// hit something that bleeds
 	if (other.takedamage)
 	{
-		spawn_touchblood (9);
+		// [Dawn]
+		if (CanEntityBleed(other))
+			spawn_touchblood (9);
 		T_Damage (other, self, self.owner, 9, 9, FALSE);
 	}
 	else
@@ -877,7 +879,9 @@ void() superspike_touch =
 	// hit something that bleeds
 	if (other.takedamage)
 	{
-		spawn_touchblood (18);
+		// [Dawn]
+		if (CanEntityBleed(other))
+			spawn_touchblood (18);
 		T_Damage (other, self, self.owner, 18, 18, FALSE);
 	}
 	else

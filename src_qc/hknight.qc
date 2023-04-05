@@ -86,7 +86,9 @@ void() hspike_touch =
 	// hit something that bleeds
 	if (other.takedamage)
 	{
-		spawn_touchblood (10);
+		// [Dawn]
+		if (CanEntityBleed(other))
+			spawn_touchblood (10);
 		T_Damage (other, self, self.owner, 10, 20, FALSE);
 	}
 	else

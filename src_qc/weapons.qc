@@ -188,10 +188,6 @@ spawn_touchblood
 */
 void(float damage) spawn_touchblood =
 {
-	// [Dawn]
-	if (!(self.flags & FL_MONSTER) || self.classname != "player")
-		return;
-
 	local vector vel;
 
 	vel = wall_velocity () * 0.2;
